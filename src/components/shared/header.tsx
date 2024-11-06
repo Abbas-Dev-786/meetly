@@ -1,9 +1,10 @@
 import React from "react";
 import Link from "next/link";
-import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { SignInButton, SignedIn, SignedOut } from "@clerk/nextjs";
 import { PenBox } from "lucide-react";
 import { Button } from "../ui/button";
 import { shrikhand } from "@/app/layout";
+import UserMenu from "./user-menu";
 
 const Header = () => {
   return (
@@ -23,13 +24,16 @@ const Header = () => {
           </Button>
         </Link>
 
+        {/* login button */}
         <SignedOut>
-          <SignInButton />
+          <SignInButton>
+            <Button variant="outline">Login</Button>
+          </SignInButton>
         </SignedOut>
+        {/* user avatar button */}
         <SignedIn>
-          <UserButton />
+          <UserMenu />
         </SignedIn>
-        {/* <Button variant="outline">Login</Button> */}
       </div>
     </nav>
   );
