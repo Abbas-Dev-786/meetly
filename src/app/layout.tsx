@@ -27,7 +27,7 @@ export default function RootLayout({
           <Header />
 
           {/* main area */}
-          <main className="min-h-[86vh] bg-gradient-to-b from-blue-50 to-white">
+          <main className="min-h-[86vh] bg-gradient-to-b from-blue-50 to-white px-4">
             {children}
           </main>
 
