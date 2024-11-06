@@ -22,12 +22,12 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en">
-        <body className={inter.className}>
+        <body className={inter.className} suppressHydrationWarning>
           {/* header */}
           <Header />
 
           {/* main area */}
-          <main className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+          <main className="min-h-[86vh] bg-gradient-to-b from-blue-50 to-white">
             {children}
           </main>
 
