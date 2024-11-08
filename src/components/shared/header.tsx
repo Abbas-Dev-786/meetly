@@ -1,12 +1,14 @@
 import React from "react";
 import Link from "next/link";
-import { SignInButton, SignedIn, SignedOut } from "@clerk/nextjs";
 import { PenBox } from "lucide-react";
 import { Button } from "../ui/button";
 import { shrikhand } from "@/app/layout";
-import UserMenu from "./user-menu";
+import { checkUser } from "@/lib/checkUser";
+import NavActions from "./nav-actions";
 
-const Header = () => {
+const Header = async () => {
+  await checkUser();
+
   return (
     <nav className="mx-auto py-2 px-4 flex items-center justify-between shadow-md border-b-2">
       {/* logo */}
@@ -24,16 +26,8 @@ const Header = () => {
           </Button>
         </Link>
 
-        {/* login button */}
-        <SignedOut>
-          <SignInButton>
-            <Button variant="outline">Login</Button>
-          </SignInButton>
-        </SignedOut>
         {/* user avatar button */}
-        <SignedIn>
-          <UserMenu />
-        </SignedIn>
+        <NavActions />
       </div>
     </nav>
   );
