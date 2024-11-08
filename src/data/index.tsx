@@ -1,4 +1,4 @@
-import { Calendar, Clock, LinkIcon } from "lucide-react";
+import { BarChart, Calendar, Clock, LinkIcon, Users } from "lucide-react";
 import React from "react";
 
 interface Ifeature {
@@ -82,4 +82,17 @@ export const testimonials: Itestimonials[] = [
       "I've seen a 30% increase in my meeting bookings since using Schedulrr. It's a game-changer for sales professionals.",
     image: "https://i.pravatar.cc/150?img=4",
   },
+];
+
+interface ISideBarItems {
+  icon: React.ComponentType<{ className?: string }>;
+  href: string;
+  label: string;
+}
+
+export const sidebarItems: ISideBarItems[] = [
+  { href: "/dashboard", label: "Dashboard", icon: BarChart },
+  { href: "/events", label: "Events", icon: Calendar },
+  { href: "/meetings", label: "Meetings", icon: Users },
+  { href: "/availability", label: "Availability", icon: Clock },
 ];
